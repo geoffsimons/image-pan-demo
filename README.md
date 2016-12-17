@@ -6,4 +6,4 @@ I don't have this up on JSFiddle yet, but you can clone this repo and load up th
 
 # Known Issues
 * Dragging outside the viewport div causes a loss of state because the event handler(s) is bound to only the div.
-* Need to add touch events
+* Have not been able to test multi-touch. Need to figure out how to do that with Chrome.
