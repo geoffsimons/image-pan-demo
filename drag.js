@@ -9,17 +9,19 @@ function PanAndZoom(container) {
   //TODO: Possibly have a new PanAndZoomController(container [, target])
   //      * target - A selector of the thing that will be transformed.
 
+  var width = container.clientWidth;
+  var height = container.clientHeight;
+  console.log('PanAndZoom, w:',width,'h:',height);
+
   var img = container.getElementsByTagName('img')[0];
 
   container.addEventListener('mousedown' , handleMouseStart);
   container.addEventListener('touchstart', handleTouchStart);
 
   var position = { x: 0, y: 0};
-  var delta = { x: 0, y: 0 };
+  var delta = { x: 0, y: 0, scale: 1 };
 
-  var origin = { x: 0, y: 0};
-
-  var scaleFactor = 1;
+  var origin = { x: 0, y: 0, scale: 1};
 
   function handleMouseStart(e) {
     console.log('mouseStart:',e);
